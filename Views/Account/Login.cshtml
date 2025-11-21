@@ -1,0 +1,41 @@
+@model NRGUserPortal.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- LOGO -->
+<div style="text-align:center; margin-top:20px;">
+    <img src="~/images/nrg_logo.png" style="width:140px; height:auto;" />
+</div>
+
+<h2 style="text-align:center; margin-top:10px;">@ViewData["Title"]</h2>
+
+<!-- LOGIN CARD -->
+<div style="background:white; padding:25px; width:350px; margin:auto; margin-top:20px;
+     border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
+
+    <form asp-action="Login" method="post">
+
+        <div>
+            <label asp-for="Email"></label><br />
+            <input asp-for="Email" /><br />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div style="margin-top:10px;">
+            <label asp-for="Password"></label><br />
+            <input asp-for="Password" type="password" /><br />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" style="margin-top:15px;">Login</button>
+        <a asp-action="Register" style="margin-left:10px;">Create account</a>
+
+    </form>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

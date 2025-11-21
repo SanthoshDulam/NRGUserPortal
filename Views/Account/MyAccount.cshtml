@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "My Account";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Welcome, @ViewBag.FirstName</p>
+
+<form asp-action="Logout" method="get">
+    <button type="submit">Logout</button>
+</form>
